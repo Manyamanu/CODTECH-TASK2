@@ -1,0 +1,15 @@
+const int ledPin = 13; 
+const unsigned long blinkInterval = 1000; 
+unsigned long previousMillis = 0; 
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+  unsigned long currentMillis = millis();
+  if (currentMillis - previousMillis >= blinkInterval) { 
+    previousMillis = currentMillis; 
+    digitalWrite(ledPin, !digitalRead(ledPin)); 
+  }
+}
